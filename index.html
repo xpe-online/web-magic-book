@@ -1,0 +1,70 @@
+<!DOCTYPE html> <!-- Use html5 -->
+
+<html lang="zh-CN"> <!-- 规定全局语言为zh-CN -->
+<!-- NOTE:  Represents the root (top-level element) of an HTML document, 
+            so it is also referred to as the root element. 
+            All other elements must be descendants of this element.  (MDN Docs) html元素是根元素-->
+
+<!-- NOTE:  Metadata contains information about the page. (MDN Docs) 这里开始是元数据标签-->
+
+  <!--  Specifies the base URL to use for all relative URLs in a document. There can be only one such element in a document. -->
+  <!--  base href="https://web.snowqwq.top/" / -->
+  <!--  For example, given <base href="https://example.com/"> and this link: <a href="#anchor">To anchor</a>. 
+        The link points to https://example.com/#anchor. 这个东西对你下面的css的引用也生效！-->
+  
+  <head>
+    <!-- Contains machine-readable information (metadata) about the document, like its title, scripts, and style sheets. -->
+    <!-- 所以页面标题、js脚本的加载和css样式表可以放到<head>，这个标签是用来存储机器可读的元数据的，base、link、style也能放在这 -->
+    <title>Web Magic Book - Web 魔法书!</title> <!--  显然是用来定义标题的 -->
+                                                <!--  The contents of a page title can have significant implications for search engine optimization (SEO). 
+                                                      In general, a longer, descriptive title performs better than short or generic titles. 
+                                                      The content of the title is one of the components used by search engine algorithms to decide the order in which to list pages in search results. 
+                                                      Also, the title is the initial "hook" by which you grab the attention of readers glancing at the search results page. -->
+    <link rel="stylesheet" href="style.css">
+    <!--  rel属性: This attribute names a relationship of the linked document to the current document. 
+          The attribute must be a space-separated list of link type values. 即表明这个link的外部资源和html是什么关系-->
+    <meta charset="utf-8"> <!-- This attribute declares the document's character encoding. 
+                                If the attribute is present, its value must be an ASCII case-insensitive match for the string "utf-8", 
+                                because UTF-8 is the only valid encoding for HTML5 documents. 
+                                <meta> elements which declare a character encoding must be located entirely within the first 1024 bytes of the document.
+                                WARNING: 请使用UTF-8作为HTML5页面的字符集！(这个meta标签一般不是必须的)这个标签必须在HTML5文档的前1024个字节内-->
+
+    <!-- meta http-equiv="refresh" content="3;url=https://github.com/xpe-online" / --> 
+    <!--  WARNING:  这个的意思是HTML5文档开始加载后3秒后跳转(refresh)到content中url后的网页，类似重定向，如果没有url就是页面重载 -->
+    <!--  WARNING:  Pages set with a refresh value run the risk of having the time interval being too short. 
+                    People navigating with the aid of assistive technology such as a screen reader may be unable 
+                    to read through and understand the page's content before being automatically redirected. 
+                    The abrupt, unannounced updating of the page content may also be disorienting 
+                    for people experiencing low vision conditions.说白了就是如果要刷新的话一定要提醒用户并且刷新时间不能太短 -->
+    <style>
+      h1{
+        font-weight: bold;
+      }
+    </style> <!-- style标签内的语法和css一样，对整个页面生效，也可以作为属性在其他标签里使用(<h1 style="font-weight: bold">) -->
+  </head>
+  <!-- 下面介绍都会按照MDN Docs里的顺序 -->
+  <body>
+    <!-- Represents the content of an HTML document. There can be only one such element in a document. -->
+    <h1>Content Section Element</h1>
+    <!--  下面介绍 Content Section 类元素 Content sectioning elements allow you to organize the document content into logical pieces. 
+          Use the sectioning elements to create a broad outline for your page content, including header and footer navigation, and heading elements to identify sections of content. -->
+
+    <address>
+      <a href="mailto:xpecnh2n@gmail.com">xpecnh2n@gmail.com</a><br />
+      <a href="https://github.com/xpe-online">My GitHub</a>
+      <!-- 没什么好说的，用来提供页面内容创作者的联系信息，会自动给里面的元素加上斜体，适合给css当选择器的父元素？具体参考MDN Docs吧 -->
+      <!-- The contact information provided by an <address> element's contents can take whatever form is appropriate for the context, 
+      and may include any type of contact information that is needed, such as a physical address, URL, email address, phone number, social media handle, geographic coordinates, and so forth. 
+      The <address> element should include the name of the person, people, or organization to which the contact information refers. -->
+    </address>
+    
+    <a href="https://blog.snowqwq.top" id="blogA"><article id="blogArticle">
+      <!-- The <article> HTML element represents a self-contained composition in a document, page, application, or site, 
+      which is intended to be independently distributable or reusable (e.g., in syndication). 
+      Examples include: a forum post, a magazine or newspaper article, or a blog entry, a product card, a user-submitted comment, an interactive widget or gadget, 
+      or any other independent item of content. 如果是做成blog entry等等会跳转的元素那这个article更像是一个跳转内容的Preview，也可以直接就是页面内的一个文章 -->
+      <h2>My Blog Index</h2>
+    </article></a>
+  </body>
+</html>
+

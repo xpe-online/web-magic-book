@@ -1,0 +1,10 @@
+#blogA {
+  color: #000000;
+}
+
+#blogArticle {
+  padding: 0 0 0 8px;
+  border: 1px black solid;
+  background: #ddd;
+  width: 240px;
+}
