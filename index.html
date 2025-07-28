@@ -1,70 +1,144 @@
 <!DOCTYPE html> <!-- Use html5 -->
 
 <html lang="zh-CN"> <!-- 规定全局语言为zh-CN -->
-<!-- NOTE:  Represents the root (top-level element) of an HTML document, 
-            so it is also referred to as the root element. 
-            All other elements must be descendants of this element.  (MDN Docs) html元素是根元素-->
+<!-- Represents the root (top-level element) of an HTML document, so it is also referred to as the root element. All other elements must be descendants of this element.  (MDN Docs) html元素是根元素-->
 
-<!-- NOTE:  Metadata contains information about the page. (MDN Docs) 这里开始是元数据标签-->
+<!-- Metadata contains information about the page. (MDN Docs) 这里开始是元数据标签-->
 
   <!--  Specifies the base URL to use for all relative URLs in a document. There can be only one such element in a document. -->
   <!--  base href="https://web.snowqwq.top/" / -->
-  <!--  For example, given <base href="https://example.com/"> and this link: <a href="#anchor">To anchor</a>. 
-        The link points to https://example.com/#anchor. 这个东西对你下面的css的引用也生效！-->
+  <!--  For example, given <base href="https://example.com/"> and this link: <a href="#anchor">To anchor</a>.
+  The link points to https://example.com/#anchor. 这个东西对你下面的css的引用也生效！-->
   
   <head>
-    <!-- Contains machine-readable information (metadata) about the document, like its title, scripts, and style sheets. -->
-    <!-- 所以页面标题、js脚本的加载和css样式表可以放到<head>，这个标签是用来存储机器可读的元数据的，base、link、style也能放在这 -->
-    <title>Web Magic Book - Web 魔法书!</title> <!--  显然是用来定义标题的 -->
-                                                <!--  The contents of a page title can have significant implications for search engine optimization (SEO). 
-                                                      In general, a longer, descriptive title performs better than short or generic titles. 
-                                                      The content of the title is one of the components used by search engine algorithms to decide the order in which to list pages in search results. 
-                                                      Also, the title is the initial "hook" by which you grab the attention of readers glancing at the search results page. -->
+    <!-- Contains machine-readable information (metadata) about the document, like its title, scripts, and style sheets. 
+    所以页面标题、js脚本的加载和css样式表可以放到<head>，这个标签是用来存储机器可读的元数据的，base、link、style也能放在这 -->
+
+    <title>Web Magic Book - Web 魔法书!</title> 
+    <!--  显然是用来定义标题的
+    The contents of a page title can have significantimplications for search engine optimization (SEO). In general, a longer, descriptive title performs better than short or generic titles. The content of the title is one of the components used by search engine algorithms to decide the order in which to list pages in search results. Also, the title is the initial "hook" by which you grab the attention of readers glancing at the search results page. -->
+
     <link rel="stylesheet" href="style.css">
-    <!--  rel属性: This attribute names a relationship of the linked document to the current document. 
-          The attribute must be a space-separated list of link type values. 即表明这个link的外部资源和html是什么关系-->
-    <meta charset="utf-8"> <!-- This attribute declares the document's character encoding. 
-                                If the attribute is present, its value must be an ASCII case-insensitive match for the string "utf-8", 
-                                because UTF-8 is the only valid encoding for HTML5 documents. 
-                                <meta> elements which declare a character encoding must be located entirely within the first 1024 bytes of the document.
-                                WARNING: 请使用UTF-8作为HTML5页面的字符集！(这个meta标签一般不是必须的)这个标签必须在HTML5文档的前1024个字节内-->
+    <!--  rel属性: This attribute names a relationship of the linked document to the current document. The attribute must be a space-separated list of link type values. 即表明这个link的外部资源和html是什么关系-->
+
+    <meta charset="utf-8">
+    <!-- This attribute declares the document's character encoding. If the attribute is present, its value must be an ASCII case-insensitive match for the string "utf-8", because UTF-8 is the only valid encoding for HTML5 documents.<meta> elements which declare a character encoding must be located entirely within the first 1024 bytes of the document.
+    WARNING: 请使用UTF-8作为HTML5页面的字符集！(这个meta标签一般不是必须的)这个标签必须在HTML5文档的前1024个字节内-->
 
     <!-- meta http-equiv="refresh" content="3;url=https://github.com/xpe-online" / --> 
     <!--  WARNING:  这个的意思是HTML5文档开始加载后3秒后跳转(refresh)到content中url后的网页，类似重定向，如果没有url就是页面重载 -->
-    <!--  WARNING:  Pages set with a refresh value run the risk of having the time interval being too short. 
-                    People navigating with the aid of assistive technology such as a screen reader may be unable 
-                    to read through and understand the page's content before being automatically redirected. 
-                    The abrupt, unannounced updating of the page content may also be disorienting 
-                    for people experiencing low vision conditions.说白了就是如果要刷新的话一定要提醒用户并且刷新时间不能太短 -->
+    <!--  WARNING:  Pages set with a refresh value run the risk of having the time interval being too short. People navigating with the aid of assistive technology such as a screen reader may be unable to read through and understand the page's content before being automatically redirected.The abrupt, unannounced updating of the page content may also be disorienting for people experiencing low vision conditions.说白了就是如果要刷新的话一定要提醒用户并且刷新时间不能太短 -->
+
     <style>
       h1{
         font-weight: bold;
       }
+      aside{
+	float: right;
+	box-shadow: inset 5px 0 5px -5px #29627e;
+	font-style: italic;
+      }
+      header{
+	border: 3px black solid;
+	padding: 3px;
+      }
+      nav{
+	border-left: 8px black solid;
+	padding: 1px;
+      }
+      hgroup{
+	border-left: 16px darkcyan solid;
+	padding: 2px 0px 2px 8px;
+	margin: 4px 0px 4px 0px;
+      }
     </style> <!-- style标签内的语法和css一样，对整个页面生效，也可以作为属性在其他标签里使用(<h1 style="font-weight: bold">) -->
+
   </head>
   <!-- 下面介绍都会按照MDN Docs里的顺序 -->
   <body>
     <!-- Represents the content of an HTML document. There can be only one such element in a document. -->
-    <h1>Content Section Element</h1>
-    <!--  下面介绍 Content Section 类元素 Content sectioning elements allow you to organize the document content into logical pieces. 
-          Use the sectioning elements to create a broad outline for your page content, including header and footer navigation, and heading elements to identify sections of content. -->
+    <h1>Content Sectioning Element</h1>
+    <!--  下面介绍 Content Sectioning类元素，内容分区元素允许你将文档内容从逻辑上进行组织划分。使用包括页眉（header）、页脚（footer）、导航（nav）和标题（h1~h6）等分区元素，来为页面内容创建明确的大纲，以便区分各个章节的内容。 -->
 
     <address>
       <a href="mailto:xpecnh2n@gmail.com">xpecnh2n@gmail.com</a><br />
       <a href="https://github.com/xpe-online">My GitHub</a>
       <!-- 没什么好说的，用来提供页面内容创作者的联系信息，会自动给里面的元素加上斜体，适合给css当选择器的父元素？具体参考MDN Docs吧 -->
-      <!-- The contact information provided by an <address> element's contents can take whatever form is appropriate for the context, 
-      and may include any type of contact information that is needed, such as a physical address, URL, email address, phone number, social media handle, geographic coordinates, and so forth. 
-      The <address> element should include the name of the person, people, or organization to which the contact information refers. -->
+      <!-- The contact information provided by an <address> element's contents can take whatever form is appropriate for the context, and may include any type of contact information that is needed, such as a physical address, URL, email address, phone number, social media handle, geographic coordinates, and so forth. The <address> element should include the name of the person, people, or organization to which the contact information refers. -->
     </address>
     
     <a href="https://blog.snowqwq.top" id="blogA"><article id="blogArticle">
-      <!-- The <article> HTML element represents a self-contained composition in a document, page, application, or site, 
-      which is intended to be independently distributable or reusable (e.g., in syndication). 
-      Examples include: a forum post, a magazine or newspaper article, or a blog entry, a product card, a user-submitted comment, an interactive widget or gadget, 
-      or any other independent item of content. 如果是做成blog entry等等会跳转的元素那这个article更像是一个跳转内容的Preview，也可以直接就是页面内的一个文章 -->
+      <!-- The <article> HTML element represents a self-contained composition in a document, page, application, or site, which is intended to be independently distributable or reusable (e.g., in syndication). Examples include: a forum post, a magazine or newspaper article, or a blog entry, a product card, a user-submitted comment, an interactive widget or gadget,or any other independent item of content. 如果是做成blog entry等等会跳转的元素那这个article更像是一个跳转内容的Preview，也可以直接就是页面内的一个文章 -->
       <h2>My Blog Index</h2>
     </article></a>
+
+    <aside><p>aside在这里喵</p></aside>
+    <!-- <aside> HTML 元素用于表示文档中内容仅与主内容间接相关的部分。通常以侧边栏或提示框的形式呈现。-->
+
+    <footer><center>脚标喵 下面的注释来自MDN Docs喵</br>
+      <small>Portions of this content are @1998-2025 by individual mozilla.orgcontributors. Content available under a Creative Commons license.</small>
+    </center></footer>
+    <!-- HTML <footer> 元素表示其最近的祖先分段内容的页脚或分段根元素。<footer> 通常包含有关该部分作者、版权数据或相关文档链接的信息。-->
+
+    <header>
+      <!-- <header> HTML 元素表示介绍性内容，通常是一组介绍性或导航性辅助内容。它可能包含一些标题元素，也可能包含徽标、搜索表单、作者姓名和其他元素。 （导航栏、搜索栏、标题、Logo等、信息和口号等等喵，会给搜索引擎和无障碍功能用的喵） -->
+      <small><p>这里是header喵（小声嘀咕）</p></small>
+      <h2>hearder里可以放标题喵</h2>
+      <h2>Author: snow</h2>
+    </header>
+    
+    <main>
+      <h3>这里是三级标题喵</h3>
+      <hgroup>
+	<h4>四级喵</h4>
+	<p>我写的喵</p>
+      </hgroup>
+      <!-- HTML <h1>–<h6> 标题 (Heading) 元素呈现了六个不同的级别的标题，<h1> 级别最高，而 <h6> 级别最低
+      MDN Docs重点Note: 对于使用屏幕阅读软件的用户而言，一种常见的导航方式是从一个标题跳到另一个标题，以快速确定页面的内容。因此，不要跳过一个或多个标题级别。因为这样做可能会造成混乱，使用户困惑于缺少的标题在哪里。不要为了减小标题的字体而使用低级别的标题，而是使用 CSS font-size 属性。-->
+      <!-- <hgroup> HTML 元素代表文档标题和与标题相关联的内容，它将一个 <h1>–<h6> 元素与一个或多个 <p> 元素组合在一起。（能当副标题用） -->
+      <!-- HTML <main> 元素呈现了文档的 <body> 或应用的主体部分。主体部分由与文档直接相关，或者扩展于文档的中心主题、应用的主要功能部分的内容组成。总之就是这个页面的主要内容扔进这 -->
+    </main>
+
+    <nav>
+      导航栏喵（虽然放在这很突兀）
+      <ul>
+	<li><a href="#">Index</a></li>
+	<li><a href="https://github.com/xpe-online">GitHub</a></li>
+	<li><a href="https://home.snowqwq.top">Blog</a></li>
+      </ul>
+    </nav>
+    <!-- HTML <nav>元素表示页面的一部分，其目的是在当前文档或其他文档中提供导航链接。导航部分的常见示例是菜单，目录和索引。 -->
+
+    <section>
+    <!-- <section> 是一个通用的分节元素，只有在没有更具体的元素来代表它的时候才可以使用。举个例子，一个导航菜单应该被包裹在 <nav> 元素中，但搜索结果列表或地图显示及其控件并没有特定的元素，可以放在 <section> 里面。 -->
+      <p>一句很随便的话</p>
+    </section>
+
+    <h1>Text Content</h1>
+    <!-- 使用 HTML 文本内容元素来组织在开标签 <body> 和闭标签 </body> 里的块或章节的内容。这些元素能标识内容的宗旨或结构，而这对于无障碍和搜索引擎优化很重要。 -->
+    <p>这里是一段引用喵</p>
+    <blockquote cite="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Reference/Elements/blockquote">
+      <p>"HTML &lt;blockquote&gt; 元素（或者 HTML 块级引用元素），代表其中的文字是引用内容。通常在渲染时，这部分的内容会有一定的缩进。若引文来源于网络，则可以将原内容的出处 URL 地址设置到 cite 特性上，若要以文本的形式告知读者引文的出处时，可以通过 &lt;cite&gt; 元素。"</p>
+    </blockquote> 
+    <blockquote>来源：<cite><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Reference/Elements/blockquote">MDN Docs</a></cite>
+    </blockquote>
+    <!-- HTML <blockquote> ，代表其中的文字是引用内容。通常在渲染时，这部分的内容会有一定的缩进。若引文来源于网络，则可以将原内容的出处 URL 地址设置到 cite 特性上，若要以文本的形式告知读者引文的出处时，可以通过 <cite> 元素。 -->
+
+    <dl>
+      <dt>HTML</dt>
+      <dd><blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML (HyperText Markup Language) is the most basic building block of the Web. It defines the meaning and structure of web content. Other technologies besides HTML are generally used to describe a web page's appearance/presentation (CSS) or functionality/behavior (JavaScript).</dd></blockquote>
+      <dt>CSS</dt>
+      <dd><blockquote cite="https://developer.mozilla.org/en-US/docs/Web/CSS">Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a document written in HTML or XML (including XML dialects such as SVG, MathML or XHTML). CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.</blockquote></dd>
+    </dl>
+    <!-- <dl> 元素 (Description List) 是一个包含术语定义以及描述的列表，通常用于展示词汇表或者元数据 (键 - 值对列表)，也就是<dt>-<dd>对。 -->
+    <!-- <dt> 元素 (Description Term) 指定描述或定义列表中的术语，因此必须在 <dl> 元素内部使用。它通常后面跟着一个 <dd> 元素；然而，多个连续的 <dt> 元素表示由紧随其后的一个 <dd> 元素定义的多个术语。 -->
+    <!-- <dd> 元素 (Description Details) 用来指明一个描述列表 (<dl>) 元素中一个术语的描述。这个元素只能作为描述列表元素的子元素出现，并且必须跟着一个 <dt> 元素。 -->
+
+    <div>
+      <p>&lt;div&gt; HTML 元素是流式内容的通用容器。它对内容或布局没有影响。除非以某种方式使用 CSS 对其进行样式设置（例如，直接应用样式，或者对其父元素应用某种布局模型，如弹性盒子），否则它对内容或布局没有影响。</p>
+      <p>是的这是一个容器盒子</p>
+    </div>
+    <!-- <div> HTML 元素是流式内容的通用容器。它对内容或布局没有影响。除非以某种方式使用 CSS 对其进行样式设置（例如，直接应用样式，或者对其父元素应用某种布局模型，如弹性盒子），否则它对内容或布局没有影响。 -->
   </body>
 </html>
 
