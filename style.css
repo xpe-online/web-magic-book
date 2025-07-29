@@ -10,11 +10,11 @@
 }
 
 @font-face {
-  font-family: "JetBrainsMonoNerdFontMono-Regular";
+  font-family: "MonaspaceArgon-Regular";
   src:
-    url("/src/JetBrainsMonoNerdFontMono-Regular.ttf") format("ttf");
+    url("/src/MonaspaceArgon-Regular.woff2") format("woff2");
 }
 
 pre{
-  font-family: "JetBrainsMonoNerdFontMono-Regular";
+  font-family: "MonaspaceArgon-Regular";
 }
