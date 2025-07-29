@@ -8,3 +8,13 @@
   background: #ddd;
   width: 240px;
 }
+
+@font-face {
+  font-family: "JetBrainsMonoNerdFontMono-Regular";
+  src:
+    url("/src/JetBrainsMonoNerdFontMono-Regular.ttf") format("ttf");
+}
+
+pre{
+  font-family: "JetBrainsMonoNerdFontMono-Regular";
+}
