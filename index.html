@@ -51,6 +51,21 @@
 	padding: 2px 0px 2px 8px;
 	margin: 4px 0px 4px 0px;
       }
+      div{
+	border: 2px black solid;
+	margin: 4px 4px 4px 4px;
+	padding: 4px;
+      }
+      hr{
+	margin: 24px auto 24px auto;
+	border: none;
+	border-top: solid black 8px;
+	width: 80%;
+      }
+      button{
+	border: 2px solid black;
+	margin: 4px;
+      }
     </style> <!-- style标签内的语法和css一样，对整个页面生效，也可以作为属性在其他标签里使用(<h1 style="font-weight: bold">) -->
 
   </head>
@@ -67,7 +82,7 @@
       <!-- The contact information provided by an <address> element's contents can take whatever form is appropriate for the context, and may include any type of contact information that is needed, such as a physical address, URL, email address, phone number, social media handle, geographic coordinates, and so forth. The <address> element should include the name of the person, people, or organization to which the contact information refers. -->
     </address>
     
-    <a href="https://blog.snowqwq.top" id="blogA"><article id="blogArticle">
+    <a href="https://home.snowqwq.top" id="blogA"><article id="blogArticle">
       <!-- The <article> HTML element represents a self-contained composition in a document, page, application, or site, which is intended to be independently distributable or reusable (e.g., in syndication). Examples include: a forum post, a magazine or newspaper article, or a blog entry, a product card, a user-submitted comment, an interactive widget or gadget,or any other independent item of content. 如果是做成blog entry等等会跳转的元素那这个article更像是一个跳转内容的Preview，也可以直接就是页面内的一个文章 -->
       <h2>My Blog Index</h2>
     </article></a>
@@ -120,8 +135,7 @@
     <blockquote cite="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Reference/Elements/blockquote">
       <p>"HTML &lt;blockquote&gt; 元素（或者 HTML 块级引用元素），代表其中的文字是引用内容。通常在渲染时，这部分的内容会有一定的缩进。若引文来源于网络，则可以将原内容的出处 URL 地址设置到 cite 特性上，若要以文本的形式告知读者引文的出处时，可以通过 &lt;cite&gt; 元素。"</p>
     </blockquote> 
-    <blockquote>来源：<cite><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Reference/Elements/blockquote">MDN Docs</a></cite>
-    </blockquote>
+    <p>来源：<cite><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Reference/Elements/blockquote">MDN Docs</a></cite></p>
     <!-- HTML <blockquote> ，代表其中的文字是引用内容。通常在渲染时，这部分的内容会有一定的缩进。若引文来源于网络，则可以将原内容的出处 URL 地址设置到 cite 特性上，若要以文本的形式告知读者引文的出处时，可以通过 <cite> 元素。 -->
 
     <dl>
@@ -134,11 +148,59 @@
     <!-- <dt> 元素 (Description Term) 指定描述或定义列表中的术语，因此必须在 <dl> 元素内部使用。它通常后面跟着一个 <dd> 元素；然而，多个连续的 <dt> 元素表示由紧随其后的一个 <dd> 元素定义的多个术语。 -->
     <!-- <dd> 元素 (Description Details) 用来指明一个描述列表 (<dl>) 元素中一个术语的描述。这个元素只能作为描述列表元素的子元素出现，并且必须跟着一个 <dt> 元素。 -->
 
-    <div>
-      <p>&lt;div&gt; HTML 元素是流式内容的通用容器。它对内容或布局没有影响。除非以某种方式使用 CSS 对其进行样式设置（例如，直接应用样式，或者对其父元素应用某种布局模型，如弹性盒子），否则它对内容或布局没有影响。</p>
+    <center><div>
+      <p>&lt;div&gt; 元素是流式内容的通用容器。它对内容或布局没有影响。除非以某种方式使用 CSS 对其进行样式设置（例如，直接应用样式，或者对其父元素应用某种布局模型，如弹性盒子），否则它对内容或布局没有影响。</p>
       <p>是的这是一个容器盒子</p>
-    </div>
+    </div></center>
     <!-- <div> HTML 元素是流式内容的通用容器。它对内容或布局没有影响。除非以某种方式使用 CSS 对其进行样式设置（例如，直接应用样式，或者对其父元素应用某种布局模型，如弹性盒子），否则它对内容或布局没有影响。 -->
+
+    <div style="background-color: #F3F3EDFF">
+      <center><figure>
+	<img src="src/sdpc.png" alt="SDPC First Bag" />
+	<figcaption>SDPC First Bag</figcaption>
+      </figure></center>
+      <!--  <figure> 元素代表一段独立的内容，可能包含 <figcaption> 元素定义的说明元素。该插图、标题和其中的内容通常作为一个独立的引用单元。通常，<figure> 的内容为图像、插图、图表、代码片段等，在文档的主内容流中引用，但可以移动到文档的另一部分或附录而不影响主内容流。<figcaption> 元素是用来描述其父节点 <figure> 元素里的其余内容的标题或说明。为 <figure> 提供一个无障碍描述。 -->
+    </div>
+
+    <hr />
+
+    <ol>
+      <h2>我的web学习路线</h2>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>Node.js</li>
+      <li>Vue.js</li>
+    </ol>
+    <ul>
+      <h2>一些待处理的项目</h2>
+      <li>做一个炫酷的Minecraft服务器WebUI仪表盘</li>
+      <li>自己做一个属于自己的blog框架</li>
+      <li>做一个酷炫的Minecraft服务器官网</li>
+    </ul>
+    <div style="padding: 12px auto 12px auto; background: #FF7FCF66"><menu>
+      <h2>神秘按钮喵</h2>
+      <li><button>喵呜</button></li>
+      <li><button>呜喵</button></li>
+    </menu>
+    </div>
+    <!-- <ol> 元素表示有序列表，通常渲染为一个带编号的列表。
+    <ul> 元素表示无序的项目列表，通常渲染为项目符号列表。
+    <li> 元素用于表示列表中的项目。它必须包含在一个父元素中：有序列表（<ol>）、无序列表（<ul>）或菜单（<menu>）。在菜单和无序列表中，列表项通常使用项目符号显示。在有序列表中，通常在左侧显示一个升序计数器，如数字或字母。
+    <menu> 和 <ul> 元素都用于表示无序列表。它们的关键区别在于，<ul> 主要用于显示内容，而 <menu> 则用于交互式内容。-->
+
+    <p>一个很普通的段落喵</p>
+    <!-- <p> 元素表示文本的一个段落。在视觉媒体中，段落通常表现为用空行和/或首行缩进与相邻段落分隔的文本块，但 HTML 段落可以是相关内容的任何结构分组，如图像或表格字段。 -->
+
+    <pre><center>
+ ███╗   ██╗  ██████╗  ██████╗  ███████╗          ██╗ ███████╗
+ ████╗  ██║ ██╔═══██╗ ██╔══██╗ ██╔════╝          ██║ ██╔════╝
+ ██╔██╗ ██║ ██║   ██║ ██║  ██║ █████╗            ██║ ███████╗
+ ██║╚██╗██║ ██║   ██║ ██║  ██║ ██╔══╝       ██   ██║ ╚════██║
+ ██║ ╚████║ ╚██████╔╝ ██████╔╝ ███████╗ ██╗ ╚█████╔╝ ███████║
+ ╚═╝  ╚═══╝  ╚═════╝  ╚═════╝  ╚══════╝ ╚═╝  ╚════╝  ╚══════╝
+    </center></pre>
+    <!-- <pre> 元素表示预定义格式文本。在该元素中的文本通常按照原文件中的编排，以等宽字体的形式展现出来，文本中的空白符（比如空格和换行符）都会显示出来。(紧跟在 <pre> 开始标签后的换行符也会被省略) -->
   </body>
 </html>
 
