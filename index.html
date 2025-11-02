@@ -66,6 +66,12 @@
 	border: 2px solid black;
 	margin: 4px;
       }
+      data:hover::after{
+	content: "(ASCII:" attr(vaule) ")";
+	margin-left: 1em;
+	font-size: 0.7em;
+	background-color: #00000070
+      }
     </style> <!-- style标签内的语法和css一样，对整个页面生效，也可以作为属性在其他标签里使用(<h1 style="font-weight: bold">) -->
 
   </head>
@@ -140,7 +146,7 @@
 
     <dl>
       <dt>HTML</dt>
-      <dd><blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML (HyperText Markup Language) is the most basic building block of the Web. It defines the meaning and structure of web content. Other technologies besides HTML are generally used to describe a web page's appearance/presentation (CSS) or functionality/behavior (JavaScript).</dd></blockquote>
+      <dd><blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML (HyperText Markup Language) is the most basic building block of the Web. It defines the meaning and structure of web content. Other technologies besides HTML are generally used to describe a web page's appearance/presentation (CSS) or functionality/behavior (JavaScript).</blockquote></dd>
       <dt>CSS</dt>
       <dd><blockquote cite="https://developer.mozilla.org/en-US/docs/Web/CSS">Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a document written in HTML or XML (including XML dialects such as SVG, MathML or XHTML). CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.</blockquote></dd>
     </dl>
@@ -213,6 +219,103 @@
     <a href="/src/sdpc.png" download="filename">点我下载改过名字的sdpc喵</a><br />
     <!-- href的值是超链接指向的URL，download属性表明这个URL是个可下载资源，download的filename值则指定了下载资源的文件名，如果没有则按照资源在服务器存储中的实际文件名 -->
 
+    <p>
+      <abbr>CSS</abbr>（层叠样式表），这里有一个abbr缩写元素<br />
+      <!-- 在包含缩写或首字母缩写词时，应在纯文本中提供该术语的扩展形式。同时使用 <abbr> 元素来标记缩写。这可以告知用户缩写或首字母缩略词的含义。 -->
+      <!-- 对于缩写来说，不一定都要使用<abbr>元素，这是可选的 -->
+      <b>CSS</b>能方便你管理文档的样式<br />
+        <!-- <b> HTML 元素用于吸引读者注意元素内容，而这些内容本身并不具有特别重要性。它以前被称为粗体元素，大多数浏览器仍然以粗体显示文本。但是，你不应该使用 <b> 来设置文本样式或赋予重要性，不要把它作为一个修改样式的元素！ -->
+    </p>
+
+    <p>
+      关于&lt;bdi&gt;元素，详见<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Reference/Elements/bdi">MDN Docs/bdi元素</a>
+      <!-- 双向隔离元素（<bdi>）告诉浏览器的双向算法将其包含的文本与周围的文本隔离，当网站动态插入一些文本且不知道所插入文本的方向性时，此功能特别有用。 -->
+    </p>
+
+    <p>
+      关于&lt;bdo&gt;元素，详见<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Reference/Elements/bdo">MDN Docs/bdo元素</a>
+      <!--  <bdo> 元素覆盖了当前文本的方向，使文本以不同的方向渲染出来。 -->
+    </p>
+    <b>这两东西太怪了</b><br />
+
+    <p>
+      <!-- <br>元素在文本中生成一个换行（回车）符号。此元素在写诗和地址时很有用，这些地方的换行都非常重要。-->
+      我，<br />
+      是一只猫娘 <br />
+      喵呜 <br/>
+    </p>
+
+    <p>
+      <!-- 引用（Citation）标签 (<cite>) 表示一个作品的引用，且必须包含作品的标题。这个引用可能是一个根据适当的上下文约定关联引用的元数据的缩写。 -->
+      上面的注释都来自<cite><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Reference/Elements/cite">MDN Docs</a></cite>喵
+	<!-- 备注： 适用场合可能包括一本书，一张纸，一篇散文，一首诗，一个分数，一首歌，一部电影，一个电视节目，一个游戏，一个雕塑，一幅画，戏剧制作，一个剧本，一个歌剧，一种音乐，一个展览，一个法律案件报告，一个计算机程序，一个网站，一个网页，博客或评论，论坛帖子或评论，鸣叫，或者书面或口头陈述，等等。-->
+    </p>
+
+    <p>
+      <!-- <code> 元素为其显示的内容添加用以表明其中的文本是一段简短的计算机代码的样式。默认情况下，内容文本使用用户代理默认的等宽字体显示。 -->
+      <code style="white-space: pre;">
+#include &lt;stdio.h&gt;
+	
+int main(void){
+	printf("&lt;code&gt;喵!");
+	return 0;
+}
+      </code>
+    </p>
+
+    <p>
+      <!-- <data> 元素将一个指定内容和机器可读的翻译联系在一起。但是，如果内容是与时间或者日期相关的，则一定要使用 <time>。 -->
+      <!-- 可以理解为打上了一个供DOM使用的数据vaule -->
+      <data vaule="65">A</data><br />
+      试试把光标放在A上喵？
+    </p>
+      <!-- 定义元素 <dfn> 表示术语的一个定义 -->
+    <p>
+      <!--
+	备注：<dfn> 元素标记了被定义的术语；术语定义应当在 <p>, <section>或定义列表 (通常是<dt>, <dd> 对) 中给出。
+	被定义术语的值由下列规则确定：
+	  如果 <dfn> 元素有一个 title 属性，那么该术语的值就是该属性的值。
+	  否则，如果它仅包含一个 <abbr> 元素，该元素拥有 title 属性，那么该术语的值就是该属性的值。
+	  否则，<dfn> 元素的文本内容就是该术语的值。
+      -->
+      <dl>
+	<dt>
+	  <dfn>Arch Linux</dfn>
+	</dt>
+	<dd>
+	  Arch Linux 是一种通用操作系统，它是基于 x86-64 架构的一类 GNU/Linux 发行版。 
+	</dd>
+      </dl>
+      <!-- 因此，dfn元素是用于标记术语的，可以脱离于dl标签，但dt与dd必须要用于dl中 -->
+    </p>
+
+    <p>
+      <!-- <em> 元素将文本标记为强调（emphasis）格式。<em> 元素可以嵌套，嵌套层次越深，则强调的程度越深。 -->
+      <!--  通常地，该元素会被浏览器展示为斜体文本，但是，它不应该仅仅用于应用斜体样式；为此目的，请使用 CSS font-style 样式。使用 <cite> 元素标记作品的标题（书籍、戏剧、歌曲等）；它通常也采用斜体样式，但具有不同的含义。使用 <strong> 元素标记比周围文本更重要的文本。-->
+      <!-- 所以用于强调时，最好设置下em的style -->
+      <em>Arch</em> is the <em><em>best</em></em><br />
+
+      <!-- <i> 用于表现因某些原因需要区分普通文本的一系列文本。例如技术术语、外文短语或是小说中人物的思想活动等，它的内容通常以斜体显示。 -->
+      It is known to us that Arch is based on <i>Rolling-release </i>system.
+
+      <!-- <em> 标签表示其内容的着重强调，而 <i> 标签表示从正常散文中区分出的文本，例如外来词，虚构人物的思想，或者当文本指的是一个词语的定义，而不是其语义含义。（作品的标题，例如书籍或电影的名字，应该使用 <cite>。） -->
+
+      <!--
+      	Summary:
+	      在较早版本的 HTML 技术参数声明中，<i> 标签只是一个用于将文本显示为斜体的表示性元素，很像 <b> 标签被用来将文本显示为粗体。情况不再是这样了，因为这些标签现在定义了更多的语义而不只是排版外观。<i> 标签应表现一系列带有不同语义的文本，它的典型样式显示为斜体。这意味着浏览器通常任会将内容显示为斜体，但是，根据定义，不再是必须的。
+	  该元素只在没有更适合的语义元素表示时使用。例如：
+	    使用 <em> 表示强调或重读。
+	    使用 <strong> 表示重要性。
+	    使用 <mark> 表示相关性。
+	    使用 <cite> 标记著作名，如一本书、剧本或是一首歌。
+	    使用 <dfn> 标记术语的定义实例。
+      -->
+    </p>
+
+    <p>
+      <!-- 键盘输入元素 (<kbd>) 用于表示用户输入，它将产生一个行内元素，以浏览器的默认 monospace 字体显示。 -->
+      Enter <kbd>sudo pacman -Syu</kbd> to upgrade your Arch Linux.
+    </p>
   </body>
 </html>
 
